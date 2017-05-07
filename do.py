@@ -20,11 +20,12 @@ grid = [
 def fill():
     for i in range(18,18+34):
         for j in range(7):
-            if grid[(i-18)+j*33]:
+            #if grid[(i-18)+j*33]:
+            if i!=18+33 or j>5:
                 with open('rubbish.txt', mode='w') as f:
                     f.write('rubbish on '+grid_to_time(i,j))
                 Popen('git add .')
-                sleep(0.5)
+                sleep(0.4)
                 Popen('git commit -m "rubbish test" --date="'+grid_to_time(i,j)+'"')
                 sleep(0.5)
                 print(('rubbish on '+grid_to_time(i,j)))
