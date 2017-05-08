@@ -20,9 +20,7 @@ grid = [
 def fill():
     for i in range(18,18+34):
         for j in range(7):
-            #if grid[(i-18)+j*33]:
-            #if i!=18+33 or j>5:
-            if i==18+33 and j==5:
+            if grid[(i-18)+j*34]:
                 with open('rubbish.txt', mode='w') as f:
                     f.write('rubbish on '+grid_to_time(i,j))
                 Popen('git add .')
